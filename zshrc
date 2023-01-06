@@ -22,5 +22,10 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
+# Salto de palabra hacia la derecha
+bindkey "^[[1;2C" forward-word
+# Salto de palabra hacia la izquierda
+bindkey "^[[1;2D" backward-word
+
+
+
