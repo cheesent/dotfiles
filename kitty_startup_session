@@ -1,0 +1,28 @@
+# Startup for kitty (pre-defined tabs and windows, set a shortcut to run the command: kitty --session ~/.config/kitty/kitty_startup_session
+
+resize_window wider 10
+launch bpytop
+launch nvtop
+layout grid
+
+new_tab terminal
+launch --title "terminal"
+launch --title "terminal"
+launch --title "terminal"
+resize_window wider 9
+
+new_tab docker
+launch --title "docker"
+resize_window w 9
+launch --title "docker"
+launch --title "docker"
+layout grid
+
+
+new_tab nvim
+launch nvim
+layout horizontal
+
+
+launch --title "terminal"
+
