@@ -8,3 +8,6 @@ To do:
 
 Some features
 - vim like gestures on the arrow keys
+- quick media control
+- screenshots
+- Tilde (´) and the ' thing (symbols layout)
