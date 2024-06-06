@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         */
     [_QWERTY] = LAYOUT_split_3x6_3(
     //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-LT(_NUMPAD,KC_TAB),    ES_Q,    ES_W,    ES_E,    ES_R,    ES_T,                         ES_Y,    ES_U,    ES_I,    ES_O,    ES_P, KC_BSPC,
+KC_TAB,    ES_Q,    ES_W,    ES_E,    ES_R,    ES_T,                         ES_Y,    ES_U,    ES_I,    ES_O,    ES_P, KC_BSPC,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
  LCTL_T(KC_ESC),    ES_A,    ES_S,    ES_D,    ES_F,    ES_G,                         ES_H,    ES_J,    ES_K,    ES_L, ES_NTIL, LALT_T(KC_LBRC),
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -84,6 +84,8 @@ LSFT_T(ES_LABK),    ES_Z,    ES_X,    ES_C,    ES_V,    ES_B,                   
 
 // vim-like navigation on the arrows below
 // ks_pscr is for screenshots
+//
+// Media control (play next previous etc are here too)
 
         */
 
@@ -154,7 +156,7 @@ LSFT_T(ES_LABK),    ES_Z,    ES_X,    ES_C,    ES_V,    ES_B,                   
                                         //
                                         //
     ),
-
+// QK_BOOT is important when we want to flash a new keymap.c with qmk.
 
                                         //Below you can select the position of your F keys from KC_F1 to KC_F24
     // [_FUNKEYS] = LAYOUT_split_3x6_3(
