@@ -28,6 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 enum layers {
   _QWERTY,
   _NAVIGATE,
+  _MOUSE,
   _SYMBOLS,
   _NUMPAD,
   _FUNKEYS
@@ -88,19 +89,30 @@ LSFT_T(ES_LABK),    ES_Z,    ES_X,    ES_C,    ES_V,    ES_B,                   
 // Media control (play next previous etc are here too)
 
         */
-
+//                                                                                  I use the ones below (LSA(kc)) for kitty window navigation....
     [_NAVIGATE] = LAYOUT_split_3x6_3(
     //,-----------------------------------------------------.                    ,-----------------------------------------------------.
          KC_TAB,    ES_X,    ES_V,    ES_C, ES_Z, XXXXXXX,                      LSA(KC_LEFT), LSA(KC_DOWN), LSA(KC_UP), LSA(KC_RIGHT), LSA(ES_Z), KC_BSPC,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
          KC_ESC, KC_LCTL, KC_LSFT, KC_LALT, KC_LGUI, KC_PSCR,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, RCS(ES_L),KC_DEL,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        KC_BRMU, KC_BRMD, XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLD,                      KC_VOLU, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, MO(_MOUSE), KC_MUTE, KC_VOLD, KC_VOLD,                      KC_VOLU, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX,
     //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                             KC_LGUI, _______,  KC_SPC,     KC_SPC, XXXXXXX  , MO(_FUNKEYS)
                                         //`--------------------------'  `--------------------------'
     ),
-
+// copied mouse layout from navigate
+    [_MOUSE] = LAYOUT_split_3x6_3(
+    //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+       XXXXXXX,XXXXXXX,XXXXXXX ,XXXXXXX , XXXXXXX , XXXXXXX,                      LSA(KC_LEFT), KC_BTN1, KC_BTN2, KC_BTN3, KC_BTN4, KC_BTN5,
+    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+         XXXXXXX, XXXXXXX, XXXXXXX,KC_BTN1 , KC_BTN2, XXXXXXX,                      KC_MS_L, KC_MS_D, KC_MS_U  , KC_MS_R, XXXXXXX,XXXXXXX,
+    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        XXXXXXX, XXXXXXX, _______, KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2,        KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, XXXXXXX, XXXXXXX,
+    //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                            KC_LGUI, _______,  KC_SPC,     KC_SPC, XXXXXXX  , MO(_FUNKEYS)
+                                        //`--------------------------'  `--------------------------'
+    ),
     /*
     //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                 ,    ¡   ,    !   ,    (   ,   )    ,        ,                             ,    =   ,    *   ,    `   ,   ^   , KC_BSPC,
@@ -183,4 +195,3 @@ LSFT_T(ES_LABK),    ES_Z,    ES_X,    ES_C,    ES_V,    ES_B,                   
                                         //`--------------------------'  `--------------------------'
     )
 };
-
